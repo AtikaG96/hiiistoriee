@@ -12,17 +12,14 @@
     <style>
         body {
             font-family: 'Georgia', serif;
-            background-color: #f4f4f4;
+            background-color: #87CEEB; /* Sky Blue */
             color: #3a3a3a;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/2c/Ancient_Egyptian_walls.jpg');
-            background-size: cover;
-            background-position: center;
         }
         .content {
-            background: rgba(255, 255, 255, 0.8);
+            background: white;
             margin: 20px auto;
             padding: 20px;
             border-radius: 10px;
@@ -38,28 +35,41 @@
             margin: 5px;
         }
         .card {
-            height: 100%;
+            height: 200px; /* Juster høyden etter behov */
+            background-size: cover;
+            background-position: center;
+            color: white; /* Hvit tekst */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Tekstskygge for bedre lesbarhet */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative; /* For overlay */
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4); /* Mørk overlay */
+            z-index: 1;
+            border-radius: 5px; /* Samme radius som kortet */
         }
         .card:hover {
             transform: translateY(-5px);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         .card-body {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            text-align: center;
+            position: relative;
+            z-index: 2; /* Plasser teksten over overlayen */
+            padding: 10px;
         }
         h1, h2 {
             color: #a67c3e;
-        }
-        .historical-card {
-            background-color: #f2e2c4;
-            color: #3a3a3a;
-            border: 1px solid #a67c3e;
-        }
-        .historical-card:hover {
-            background-color: #e1d0a7;
         }
     </style>
 </head>
@@ -72,75 +82,89 @@
             </p>
             <h2>Utforsk perioder</h2>
             <div class="row">
+                <!-- Oldtiden -->
                 <div class="col-md-6 col-lg-3 mb-4">
-                    <a href="oldtiden.html" class="card text-decoration-none historical-card">
+                    <a href="oldtiden/oldtiden.html" class="card text-decoration-none" style="background-image: url('https://media.snl.no/media/60314/standard_compressed_het_re.jpg');">
                         <div class="card-body">
                             <h5 class="card-title">Oldtiden</h5>
-                            <p class="card-text">Fra de tidlige sivilisasjonene til den romerske erobringen. En periode med store filosofiske og kulturelle utviklinger.</p>
+                            <p class="card-text">Fra de tidlige sivilisasjonene til den romerske erobringen.</p>
                         </div>
                     </a>
                 </div>
+
+                <!-- Middelalderen -->
                 <div class="col-md-6 col-lg-3 mb-4">
-                    <a href="middelalderen.html" class="card text-decoration-none historical-card">
+                    <a href="middelalderen/middelalderen.html" class="card text-decoration-none" style="background-image: url('https://media.snl.no/media/139031/standard_compressed_Cleric-Knight-Workman.jpg');">
                         <div class="card-body">
                             <h5 class="card-title">Middelalderen</h5>
-                            <p class="card-text">En tid preget av kriger, religiøse konflikter og dannelsen av feudal samfunnsstruktur.</p>
+                            <p class="card-text">En tid preget av kriger og religiøse konflikter.</p>
                         </div>
                     </a>
                 </div>
+
+                <!-- Renessansen -->
                 <div class="col-md-6 col-lg-3 mb-4">
-                    <a href="renessansen.html" class="card text-decoration-none historical-card">
+                    <a href="renessansen/renessansen.html" class="card text-decoration-none" style="background-image: url('https://filosofi.no/wp-content/uploads/2008/06/fb-renessansen.jpg');">
                         <div class="card-body">
                             <h5 class="card-title">Renessansen</h5>
-                            <p class="card-text">En periode med kulturell oppblomstring og nytenkning som påvirket kunst, vitenskap og samfunn.</p>
+                            <p class="card-text">Kulturell oppblomstring og nytenkning.</p>
                         </div>
                     </a>
                 </div>
+
+                <!-- Første verdenskrig -->
                 <div class="col-md-6 col-lg-3 mb-4">
-                    <a href="forsteverdenskrig.html" class="card text-decoration-none historical-card">
+                    <a href="forsteverdenskrig/forsteverdenskrig.html" class="card text-decoration-none" style="background-image: url('https://images.bonnier.cloud/files/his/production/2019/10/02160419/skyttergrav-utgravning-soldater-trening.jpg');">
                         <div class="card-body">
                             <h5 class="card-title">Første verdenskrig</h5>
-                            <p class="card-text">En ødeleggende global konflikt som omformet det politiske landskapet på begynnelsen av 1900-tallet.</p>
+                            <p class="card-text">En global konflikt som endret verden.</p>
                         </div>
                     </a>
                 </div>
+
+                <!-- Andre verdenskrig -->
                 <div class="col-md-6 col-lg-3 mb-4">
-                    <a href="andreverdenskrig.html" class="card text-decoration-none historical-card">
+                    <a href="andreverdenskrig/andreverdenskrig.html" class="card text-decoration-none" style="background-image: url('https://cine.no/wp-content/uploads/2022/11/Schelde.jpg');">
                         <div class="card-body">
                             <h5 class="card-title">Andre verdenskrig</h5>
-                            <p class="card-text">En av de mest omfattende konfliktene i historien, med dyptgripende konsekvenser for verdenspolitikken.</p>
+                            <p class="card-text">En av de mest ødeleggende konfliktene i historien.</p>
                         </div>
                     </a>
                 </div>
+
+                <!-- Den kalde krigen -->
                 <div class="col-md-6 col-lg-3 mb-4">
-                    <a href="denkaldekrigen.html" class="card text-decoration-none historical-card">
+                    <a href="denkaldekrigen/denkaldekrigen.html" class="card text-decoration-none" style="background-image: url('https://folkogforsvar.no/wp-content/uploads/2021/05/the_cold_war_by_lullska_dbt6bst-fullview.jpg');">
                         <div class="card-body">
                             <h5 class="card-title">Den kalde krigen</h5>
-                            <p class="card-text">En ideologisk og geopolitisk konflikt mellom USA og Sovjetunionen som formet global politikk etter andre verdenskrig.</p>
+                            <p class="card-text">En geopolitisk konflikt mellom øst og vest.</p>
                         </div>
                     </a>
                 </div>
+
+                <!-- Den industrielle revolusjon -->
                 <div class="col-md-6 col-lg-3 mb-4">
-                    <a href="denindustriellerevolusjonen.html" class="card text-decoration-none historical-card">
+                    <a href="denindustriellerevolusjonen/denindustriellerevolusjonen.html" class="card text-decoration-none" style="background-image: url('https://media.snl.no/media/23698/article_topimage_Philipp_Jakob_Loutherbourg_d._J._002.jpg');">
                         <div class="card-body">
                             <h5 class="card-title">Den industrielle revolusjon</h5>
-                            <p class="card-text">En ideologisk og geopolitisk konflikt mellom USA og Sovjetunionen som formet global politikk etter andre verdenskrig.</p>
+                            <p class="card-text">Teknologiske fremskritt som endret samfunnet.</p>
                         </div>
                     </a>
                 </div>
+
+                <!-- Moderne historie -->
                 <div class="col-md-6 col-lg-3 mb-4">
-                    <a href="modernehistorie.html" class="card text-decoration-none historical-card">
+                    <a href="modernehistorie/modernehistorie.html" class="card text-decoration-none" style="background-image: url('https://digitalnorway.com/wp-content/uploads/2021/11/baerekraft-teknologi.jpg');">
                         <div class="card-body">
                             <h5 class="card-title">Moderne historie</h5>
-                            <p class="card-text">Den siste tidens utvikling med globale konflikter, teknologiske fremskritt og økonomiske endringer.</p>
+                            <p class="card-text">Globalisering og teknologisk utvikling.</p>
                         </div>
                     </a>
                 </div>
             </div>
-
-              </div>
+        </div>
         <div class="navigation">
-            <a href="index.html" class="btn btn-primary">Home</a>
+            <a href="index.html" class="btn btn-primary">Hjem</a>
         </div>
     </div>
 

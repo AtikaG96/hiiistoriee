@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
     <!-- Hjemmesiden -->
     <url>
         <loc>https://atikag96.github.io/hiiistoriee/</loc>
         <lastmod>2023-10-05</lastmod>
         <priority>1.0</priority>
+        google-site-verification: google23208a9a89f75a43.html
+
     </url>
     <!-- Oldtiden -->
     <url>
